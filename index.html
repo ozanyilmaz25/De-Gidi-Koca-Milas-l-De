@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>De Gidi Goca Milas De</title>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="oyun">
+
+    <!-- Üst Bilgi Paneli -->
+    <header id="ustPanel">
+
+        <div class="logo">
+            <h1>🗺️ De Gidi Goca Milas De</h1>
+            <p>Milas Köy Bulma Oyunu</p>
+        </div>
+
+        <div class="istatistik">
+
+            <div class="kutu">
+                <span class="baslik">Puan</span>
+                <span id="puan">0</span>
+            </div>
+
+            <div class="kutu">
+                <span class="baslik">Süre</span>
+                <span id="sure">60</span>
+            </div>
+
+            <div class="kutu">
+                <span class="baslik">Soru</span>
+                <span id="soruNo">1</span>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Soru -->
+    <section id="soruPanel">
+
+        <h2 id="soru">
+            Oyun Başlamak İçin Başlat Butonuna Bas
+        </h2>
+
+    </section>
+
+    <!-- Harita -->
+    <div id="map"></div>
+
+    <!-- Alt Panel -->
+    <footer id="altPanel">
+
+        <button id="baslatBtn">
+            ▶ Oyunu Başlat
+        </button>
+
+        <button id="yenidenBtn" style="display:none;">
+            🔄 Yeniden Başlat
+        </button>
+
+        <div id="mesaj"></div>
+
+    </footer>
+
+</div>
+
+<!-- Oyun Sonu Penceresi -->
+
+<div id="oyunSonu" class="gizli">
+
+    <div class="popup">
+
+        <h2>🎉 Oyun Bitti</h2>
+
+        <p>
+            Toplam Puanın
+        </p>
+
+        <h1 id="finalPuan">
+            0
+        </h1>
+
+        <button id="tekrarBtn">
+            Tekrar Oyna
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
