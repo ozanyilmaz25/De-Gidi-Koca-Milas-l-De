@@ -299,7 +299,7 @@ function koyKontrol(feature, layer) {
 
         if (bgMusic && filterNode && audioCtx) {
             try {
-                bgMusic.playbackRate = 0.75; 
+                bgMusic.playbackRate = 0.95; 
                 filterNode.frequency.setValueAtTime(800, audioCtx.currentTime);
                 if (musicGainNode) musicGainNode.gain.setValueAtTime(0.9, audioCtx.currentTime);
                 
