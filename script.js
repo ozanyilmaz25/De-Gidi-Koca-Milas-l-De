@@ -299,15 +299,17 @@ function koyKontrol(feature, layer) {
 
         if (bgMusic && filterNode && audioCtx) {
             try {
-                bgMusic.playbackRate = 0.60; 
-                filterNode.frequency.setValueAtTime(280, audioCtx.currentTime); 
+                bgMusic.playbackRate = 0.75; 
+                filterNode.frequency.setValueAtTime(800, audioCtx.currentTime);
+                if (musicGainNode) musicGainNode.gain.setValueAtTime(0.4, audioCtx.currentTime);
                 
                 setTimeout(() => {
-                    if(bgMusic) bgMusic.playbackRate = 1.0;
-                    if (filterNode) filterNode.frequency.exponentialRampToValueAtTime(20000, audioCtx.currentTime + 0.25);
-                }, 1500); 
-            } catch(e){}
-        }
+            if(bgMusic) bgMusic.playbackRate = 1.0;
+            if (filterNode) filterNode.frequency.exponentialRampToValueAtTime(20000, audioCtx.currentTime + 0.25);
+            if (musicGainNode) musicGainNode.gain.linearRampToValueAtTime(1.0, audioCtx.currentTime + 0.25); // Sesi eski haline getir
+        }, 1200); // 1.2 saniye sonra düzelsin
+    } catch(e){}
+}
 
         if (efektKatmani && oyunAlani) {
             efektKatmani.classList.add("flash-yanlis-aktif");
